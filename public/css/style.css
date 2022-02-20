@@ -1,5 +1,5 @@
 .navbar {
-  background-color: rgb(216, 195, 195);
+  background-color: rgb(206, 182, 182);
 }
 
 .nav-link {
@@ -8,4 +8,8 @@
 
 .nav-link:hover {
   font-size: 130%;
+}
+
+body {
+  background-color: rgb(228, 228, 228);
 }
