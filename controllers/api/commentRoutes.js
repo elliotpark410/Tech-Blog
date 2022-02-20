@@ -1,5 +1,10 @@
+// require express router which helps us create router handlers
 const router = require('express').Router();
+
+// require Comment model
 const { Comment } = require('../../models');
+
+// require withAuth which is custom middleware to 
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
