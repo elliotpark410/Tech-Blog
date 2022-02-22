@@ -38,7 +38,7 @@ app.use(session(sess));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// Sets up the Express app to handle data parsing
+// Sets up the Express app to handle data parsing for puts and post routes
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -48,7 +48,7 @@ app.use(routes);
 
 // Sequelize.sync is used to synchronize your Sequelize model with your database tables
 // force: false means that if the table exists, then any CRUD actions won't be executed
-// initialize portwith app.listen
+// initialize port with app.listen
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));
 });
