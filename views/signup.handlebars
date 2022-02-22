@@ -1,16 +1,24 @@
 <div class="card">
   <h5 class="card-header">Sign Up</h5>
   <div class="card-body">
-    <form>
+    <form class="signup-form">
+
       <div class="form-group">
-        <label for="usernameInput">Username</label>
-        <input type="username" class="form-control" id="usernameInput" placeholder="">
+        <label for="username-signup">Username</label>
+        <input type="text" class="form-control" id="username-signup" placeholder="">
       </div>
+
       <div class="form-group">
-        <label for="passwordInput">Password</label>
-        <input type="password" class="form-control" id="passwordInput" placeholder="">
+        <label for="email-signup">Email</label>
+        <input type="text" class="form-control" id="email-signup" />
       </div>
-      <button type="submit" class="btn btn-default">Sign Up</button>
+
+      <div class="form-group">
+        <label for="password-signup">Password</label>
+        <input type="password" class="form-control" id="password-signup" placeholder="">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Sign Up</button>
     </form>
   </div>
 </div>

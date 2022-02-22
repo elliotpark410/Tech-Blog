@@ -63,28 +63,21 @@ h4 {
   font-style: italic;
 }
 
-
-
-
-
-/* .btn {
+.btn {
   font-size: 20px;
   padding: 6px 5px;
-  width: 100%;
-  display: block;
-  margin: 5px 0;
-  color: white;
-  border: none;
-  outline: none;
-  transform: translate(-1px, -1px);
-} */
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
 
-/* .btn:hover {
-  color: var(--primary);
-  background-color: var(--tertiary);
-  transform: translate(0, 0);
-  box-shadow: 2px 2px var(--dark);
-} */
+.signup-link {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
 
 /* .btn-inline {
   display: inline;

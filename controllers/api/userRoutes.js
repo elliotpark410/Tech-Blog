@@ -11,7 +11,7 @@ router.post('/signup', async (req, res) => {
     // include new User object and use Sequelize's create() method to add a row of data to the table
      // req.body allows you to access data in a string or JSON object from the client side
       /*
-      Commet model:
+      User model:
       id
       username
       email

@@ -14,7 +14,7 @@ router.get('/', withAuth, async (req, res) => {
   try {
     // Get only blog posts that user created
     // find blog posts by req.session.user_id which is equal to User id
-    const postData = await Post.findByPk(req.session.user_id, {
+    const postData = await Post.findAll(req.session.user_id, {
       // join username data in User model
       include: [
         {

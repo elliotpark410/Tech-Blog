@@ -21,6 +21,7 @@ router.get('/', async (req, res) => {
       ],
     });
 
+
     /// create posts variable to store serialized data
     // .map method creates a new array with the results of a function
     // we only get the data we want instead of a huge object with .get ({ plain: true })
@@ -45,6 +46,24 @@ router.get('/', async (req, res) => {
     // res.status(500) sets the HTTP status to a server error response (Internal Server Error)
     res.status(500).json(err);
   }
+});
+
+
+// /login get route so user can be redirected to homepage or if user needs to login, render login.handlebars template
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to homepage
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+  // else render login.handlebars template
+  res.render('login');
+});
+
+
+// /signup get route so user can be taken to sign up page with render signup.handlebars template
+router.get('/signup', (req, res) => {
+  res.render('signup');
 });
 
 
@@ -94,21 +113,8 @@ router.get('/:id', async (req, res) => {
 });
 
 
-// /login get route so user can be redirected to homepage or if user needs to login, render login.handlebars template
-router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to homepage
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-  }
-  // else render login.handlebars template
-  res.render('login');
-});
 
-// /signup get route so user can be taken to sign up page with render signup.handlebars template
-router.get('/signup', (req, res) => {
-  res.render('signup');
-});
+
 
 // module.exports are instructions for Node.js to export this code so that other files are allowed to access this code
 module.exports = router;
