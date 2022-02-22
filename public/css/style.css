@@ -78,6 +78,14 @@ h4 {
   margin: 20px auto;
 }
 
+.new-post-link {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+  font-weight: bold;
+  font-size: 24px;
+}
+
 
 
 

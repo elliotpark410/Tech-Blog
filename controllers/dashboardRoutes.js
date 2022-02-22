@@ -100,5 +100,10 @@ router.get('/edit/:id', async (req, res) => {
   }
 });
 
+
+router.get('/newPost', withAuth, (req, res) => {
+  res.render('new-post');
+});
+
 // module.exports are instructions for Node.js to export this code so that other files are allowed to access this code
 module.exports = router;
