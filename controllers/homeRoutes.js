@@ -9,11 +9,13 @@ router.get('/', async (req, res) => {
   try {
     // Get all Post data and JOIN with user data and comment data
     const postData = await Post.findAll({
+          // join username data in User model
       include: [
         {
           model: User,
           attributes: ['username'],
         },
+        // join comment_content, user_id, post_id data in Comment model
         {
           model: Comment,
           attributes: ['comment_content', 'user_id', 'post_id'],
@@ -65,55 +67,6 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   res.render('signup');
 });
-
-
-// /:id get route so user can have access to one of their specific blog posts and include user and comment data that is in the database 
-router.get('/:id', async (req, res) => {
-  try {
-    // Get one blog post data by id that user created
-    // find blog posts by req.session.user_id which is equal to User id
-    const postData = await Post.findByPk(req.params.id, {
-      include: [
-        // join username data in User model
-        {
-          model: User,
-          attributes: ['username'],
-        },
-        // join comment_content, user_id, post_id data in Comment model
-        {
-          model: Comment,
-          attributes: ['comment_content', 'user_id', 'post_id'],
-        },
-      ],
-    });
-
-    // Serialize is the process of an object is formatted so it is suitable for transfer
-    // Serialize data so the template can read it
-    const post = postData.get({ plain: true });
-
-    // Pass serialized posts data and session flag and render single-post.handlebars template
-    res.render('single-post', {
-      // spread operator removes the curly brackets from an object and square brackets from an array
-      // post will send data in a string or JSON object when the client side calls route
-      /*
-      id
-      title
-      post_content
-      user_id
-      [User.username]
-      [Comment.comment_content, Comment.user_id, Comment.post_id]
-      */
-      ...post,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    // res.status(500) sets the HTTP status to a server error response (Internal Server Error)
-    res.status(500).json(err);
-  }
-});
-
-
-
 
 
 // module.exports are instructions for Node.js to export this code so that other files are allowed to access this code

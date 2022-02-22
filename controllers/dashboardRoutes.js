@@ -8,59 +8,12 @@ const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 
-// /dashboard get route so user can have access to blog post, user, and comment data that is in the database 
-// use withAuth so only a logged in user can see blog posts, users, and comments
-router.get('/', withAuth, async (req, res) => {
-  try {
-    // Get only blog posts that user created
-    // find blog posts by req.session.user_id which is equal to User id
-    const postData = await Post.findAll(req.session.user_id, {
-      // join username data in User model
-      include: [
-        {
-          model: User,
-          attributes: ['username'],
-        },
-        // join comment_content, user_id, post_id data in Comment model
-        {
-          model: Comment,
-          attributes: ['comment_content', 'user_id', 'post_id'],
-        },
-      ],
-    });
-
-    // create posts variable to store serialized data
-    // .map method creates a new array with the results of a function
-    // we only get the data we want instead of a huge object with .get ({ plain: true })
-    // Serialize is the process of formatting an object so it is suitable for transfer
-    // Serialize data so the template can read it
-    const posts = postData.map((post) => post.get({ plain: true }));
-
-    // Pass serialized posts data and session flag and render dashboard.handlebars template
-    res.render('dashboard', { 
-      /*
-      id
-      title
-      post_content
-      user_id
-      [User.username]
-      [Comment.comment_content, Comment.user_id, Comment.post_id]
-      */
-      posts, 
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    // res.status(500) sets the HTTP status to a server error response (Internal Server Error)
-    res.status(500).json(err);
-  }
-});
-
 // /dashboard/:id get route so user can have access to one of their specific blog posts and include user and comment data that is in the database 
-router.get('/:id', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // Get one blog post data by id that user created
     // find blog posts by req.session.user_id which is equal to User id
-    const postData = await Post.findByPk(req.params.id, {
+    const postData = await Post.findByPk(req.session.user_id, {
       include: [
         // join username data in User model
         {

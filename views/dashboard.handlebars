@@ -1,16 +1,16 @@
-{{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-    {{#each posts as |post|}}
-      <div class="card">
-        <div class="card-header">
-        <h4><a class="link" href="/dashboard/edit/{{id}}">{{title}}</a></h4>
-    </div>
-</div>
-    {{/each}}
+<h2>Your Posts</h2>
+  {{#each posts as |post|}}
+    <div class="card">
+      <div class="card-header">
+        <h4><a class="post-title" href="/dashboard/edit/{{id}}">{{title}}</a></h4>
+        <p class="user-info">Posted by {{user.username}} on {{format_date date_created}}</p>
+      </div>
 
-</section>
-{{/if}}
+      <p class="card-body">{{post_content}}</p>
+  </div>
+
+  {{/each}}
+
 
 <button type="submit" class="btn"><a class="link" href="">+ New Post</a></button>
 
