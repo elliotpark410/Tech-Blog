@@ -30,7 +30,7 @@ router.get('/', withAuth, async (req, res) => {
 
     // Serialize is the process of an object is formatted so it is suitable for transfer
     // Serialize data so the template can read it
-    const post = postData.get({ plain: true });
+    const posts = postData.get({ plain: true });
 
     // Pass serialized posts data and session flag and render dashboard.handlebars template
     res.render('dashboard', {
@@ -44,7 +44,7 @@ router.get('/', withAuth, async (req, res) => {
       [User.username]
       [Comment.comment_content, Comment.user_id, Comment.post_id]
       */
-      ...post,
+      ...posts,
       
       logged_in: req.session.logged_in
     });
@@ -53,6 +53,15 @@ router.get('/', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+// /dashboard/newPost get route so user can add a newPost
+router.get('/newPost',  (req, res) => {
+  res.render('new-post', {
+    logged_in: req.session.logged_in,
+  })
+});
+
 
 // /dashboard/edit/:id get route so user can have edit one of their specific blog posts and include user and comment data that is in the database 
 router.get('/edit/:id', async (req, res) => {
@@ -100,10 +109,6 @@ router.get('/edit/:id', async (req, res) => {
   }
 });
 
-
-router.get('/newPost', withAuth, (req, res) => {
-  res.render('new-post');
-});
 
 // module.exports are instructions for Node.js to export this code so that other files are allowed to access this code
 module.exports = router;
