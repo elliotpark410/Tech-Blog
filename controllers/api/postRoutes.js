@@ -66,12 +66,16 @@ router.delete('/:id', withAuth, async (req, res) => {
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.update({
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
+      title: req.body.title,
+      post_content: req.body.post_content
+      }, 
+      {
+        where: {
+            id: req.params.id,
+            user_id: req.session.user_id, 
+        }
     });
-
+    console.log('POSTDATA: ')
     if (!postData) {
       // res.status(404) sets the HTTP status to a client error response (Not Found)
       res.status(404).json({ message: 'No post found with this id!' });

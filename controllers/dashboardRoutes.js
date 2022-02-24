@@ -75,7 +75,10 @@ router.get('/edit/:id', async (req, res) => {
   try {
     // Get one blog post data by id that user created
     // find blog posts by req.session.user_id which is equal to User id
-    const postData = await Post.findByPk(req.params.id, {
+    const postData = await Post.findOne({
+      where: {
+        id: req.params.id
+      },
       include: [
         // join username data in User model
         {
@@ -92,7 +95,7 @@ router.get('/edit/:id', async (req, res) => {
 
     // Serialize is the process of an object is formatted so it is suitable for transfer
     // Serialize data so the template can read it
-    const posts = postData.get({ plain: true });
+    const post = postData.get({ plain: true });
 
     // Pass serialized posts data and session flag and render edit-post.handlebars template
     res.render('edit-post', {
@@ -107,7 +110,7 @@ router.get('/edit/:id', async (req, res) => {
       [User.username]
       [Comment.comment_content, Comment.user_id, Comment.post_id]
       */
-      ...posts,
+      ...post,
       logged_in: req.session.logged_in
     });
   } catch (err) {
