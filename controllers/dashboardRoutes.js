@@ -10,10 +10,14 @@ const withAuth = require('../utils/auth');
 
 // /dashboard/:id get route so user can have access to one of their specific blog posts and include user and comment data that is in the database 
 router.get('/', withAuth, async (req, res) => {
+  console.log('userid: ', req.session.user_id)
   try {
     // Get one blog post data by id that user created
     // find blog posts by req.session.user_id which is equal to User id
-    const postData = await Post.findByPk(req.session.user_id, {
+    const postData = await Post.findAll({
+      where: {
+        user_id: req.session.user_id
+      },  
       include: [
         // join username data in User model
         {
@@ -27,10 +31,13 @@ router.get('/', withAuth, async (req, res) => {
         },
       ],
     });
-
+    
+    console.log('postData: ', postData)
     // Serialize is the process of an object is formatted so it is suitable for transfer
     // Serialize data so the template can read it
-    const posts = postData.get({ plain: true });
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    console.log('posts: ', posts)
 
     // Pass serialized posts data and session flag and render dashboard.handlebars template
     res.render('dashboard', {
@@ -44,7 +51,7 @@ router.get('/', withAuth, async (req, res) => {
       [User.username]
       [Comment.comment_content, Comment.user_id, Comment.post_id]
       */
-      ...posts,
+      posts,
       
       logged_in: req.session.logged_in
     });
@@ -85,7 +92,7 @@ router.get('/edit/:id', async (req, res) => {
 
     // Serialize is the process of an object is formatted so it is suitable for transfer
     // Serialize data so the template can read it
-    const post = postData.get({ plain: true });
+    const posts = postData.get({ plain: true });
 
     // Pass serialized posts data and session flag and render edit-post.handlebars template
     res.render('edit-post', {
@@ -100,7 +107,7 @@ router.get('/edit/:id', async (req, res) => {
       [User.username]
       [Comment.comment_content, Comment.user_id, Comment.post_id]
       */
-      ...post,
+      ...posts,
       logged_in: req.session.logged_in
     });
   } catch (err) {
