@@ -1,21 +1,19 @@
 # Tech-Blog
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-A CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well
 
+A CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well.
 
-OLD README.MD MUST UPDATE!!!
+The app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package to store session data.
 
-
-Employee Tracker is a command-line application to manage a company's employee database. With this application, you will be able to view and update 3 SQL tables (department, role, and employee). The purpose of this application is to have a Content Management System so that non-developers can easily view and interact with information stored in databases. The application uses [Node.js](https://nodejs.org/en/download/), [npm Inquirer](https://www.npmjs.com/package/inquirer), and [MySQL](https://www.mysql.com/downloads/). 
 
 <br>
 
 
 ## Links
-<!-- 
+
 Deployed App on Heroku
 > [https://note-taker-elliotpark.herokuapp.com/](https://note-taker-elliotpark.herokuapp.com/)
-<br> -->
+<br>
 
 Link to GIF of Application
 > [https://drive.google.com/file/d/1ivP0EtLiI3hlsF6KbffkX7InR82vLHnL/view](https://drive.google.com/file/d/1ivP0EtLiI3hlsF6KbffkX7InR82vLHnL/view)

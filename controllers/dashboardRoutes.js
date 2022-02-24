@@ -67,7 +67,7 @@ router.get('/newPost',  (req, res) => {
 
 
 // /dashboard/edit/:id get route so user can have edit one of their specific blog posts and include user and comment data that is in the database 
-router.get('/edit/:id', async (req, res) => {
+router.get('/edit/:id', withAuth, async (req, res) => {
   try {
     // Get one blog post data by id that user created
     // find blog posts by req.session.user_id which is equal to User id
