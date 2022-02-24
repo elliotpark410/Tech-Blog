@@ -87,7 +87,7 @@ router.get('/post/:id', async (req, res) => {
         // join comment_content, user_id, post_id data in Comment model
         {
           model: Comment,
-          attributes: ['comment_content', 'user_id', 'post_id'],
+          attributes: ['comment_content', 'user_id', 'post_id', 'date_created'],
           include: {
             model: User,
             attributes: ['username']
