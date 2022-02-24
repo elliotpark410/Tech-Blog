@@ -10,7 +10,6 @@ const withAuth = require('../utils/auth');
 
 // /dashboard/:id get route so user can have access to one of their specific blog posts and include user and comment data that is in the database 
 router.get('/', withAuth, async (req, res) => {
-  console.log('userid: ', req.session.user_id)
   try {
     // Get one blog post data by id that user created
     // find blog posts by req.session.user_id which is equal to User id
@@ -32,12 +31,9 @@ router.get('/', withAuth, async (req, res) => {
       ],
     });
     
-    console.log('postData: ', postData)
     // Serialize is the process of an object is formatted so it is suitable for transfer
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
-
-    console.log('posts: ', posts)
 
     // Pass serialized posts data and session flag and render dashboard.handlebars template
     res.render('dashboard', {

@@ -47,6 +47,9 @@ router.delete('/:id', withAuth, async (req, res) => {
     // include a commentData variable to store the to be deleted comment data
     // include new Comment object and use Sequelize's destroy() method to delete a row of data filtered by id in the table
     const commentData = await Comment.destroy({
+      comment_content: req.body.comment_content
+      }, 
+      {
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
@@ -73,10 +76,13 @@ router.put('/:id', withAuth, async (req, res) => {
     // include a commentData variable to store the to be updated comment data
     // include new Comment object and use Sequelize's update() method to update a row of data filtered by id in the table
     const commentData = await Comment.update({
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
+      comment_content: req.body.comment_content
+      }, 
+      {
+        where: {
+            id: req.params.id,
+            user_id: req.session.user_id, 
+        }
     });
 
     if (!commentData) {

@@ -1,0 +1,27 @@
+<div class="card">
+
+  <div class="card-header">
+    <h4><a class="post-title" href="/post/{{id}}">{{title}}</a></h4>
+      <p class="user-info">Posted by {{user.username}} on {{format_date date_created}}</p>
+  </div>
+
+  <p class="card-body">{{post_content}}</p>
+  
+</div>
+
+<div class="card">
+    <h3 class="card-header"></h3>
+    <form class="card-body comment-form" id="comment-form">
+
+        <label class="form-group">Comments</label>
+        <input id="comment" name="comment-body" class="form-control"/>
+
+        <button type="submit" class="btn btn-primary mt-3">Submit a Comment</button>
+    </form>
+</div>
+
+
+{{> comments post.comments}}
+
+
+<script src="/js/comment.js"></script>
