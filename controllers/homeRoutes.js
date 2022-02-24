@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
         // join comment_content, user_id, post_id data in Comment model
         {
           model: Comment,
-          attributes: ['comment_content', 'user_id', 'post_id'],
+          attributes: ['comment_content', 'user_id', 'post_id', 'user.username'],
         },
       ],
     });
@@ -88,6 +88,10 @@ router.get('/post/:id', async (req, res) => {
         {
           model: Comment,
           attributes: ['comment_content', 'user_id', 'post_id'],
+          include: {
+            model: User,
+            attributes: ['username']
+        }
         },
       ],
     });
@@ -130,14 +134,18 @@ router.get('/post-comments', async (req, res) => {
       },
       include: [
         // join username data in User model
-        {
-          model: User,
-          attributes: ['username'],
-        },
+        // {
+        //   model: User,
+        //   attributes: ['username'],
+        // },
         // join comment_content, user_id, post_id data in Comment model
         {
           model: Comment,
           attributes: ['comment_content', 'user_id', 'post_id'],
+          include: {
+            model: User,
+            attributes: ['username']
+        }
         },
       ],
     });

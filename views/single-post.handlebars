@@ -13,11 +13,28 @@
     <h3 class="card-header"></h3>
     <form class="card-body comment-form" id="comment-form">
 
-        <label class="form-group">Comments</label>
+        <label class="form-group font-weight-bold">Comments</label>
+
+          {{#each comments as |comment| }}
+          <div class="card">
+            <section class="comment card-body">
+                <div class="text">
+                    {{comment.comment_content}}
+                </div>
+                <br>
+                <p class="user-info">Commented by {{user.username}}</p>
+            </section>
+          </div>
+          {{/each}}
+
+        <br>
+        <br>
         <input id="comment" name="comment-body" class="form-control"/>
 
         <button type="submit" class="btn btn-primary mt-3">Submit a Comment</button>
     </form>
+  
+
 </div>
 
 
