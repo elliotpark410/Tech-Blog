@@ -4,6 +4,9 @@ const router = require('express').Router();
 // export User, Post, and Comment models
 const { User, Post, Comment } = require('../models');
 
+// require withAuth which is custom middleware to verify that a user has a logged in session i.e. only logged in users will be able to access functions that have withAuth
+const withAuth = require('../utils/auth');
+
 // / homepage get route so user can have access to ALL blog posts, user data, and comment data that is in the database 
 router.get('/', async (req, res) => {
   try {
@@ -124,7 +127,7 @@ router.get('/post/:id', async (req, res) => {
 
 
 
-router.get('/post-comments', async (req, res) => {
+router.get('/post-comments', withAuth, async (req, res) => {
   try {
     // Get one blog post data by id that user created
     // find blog posts by req.session.user_id which is equal to User id

@@ -59,7 +59,7 @@ router.get('/', withAuth, async (req, res) => {
 
 
 // /dashboard/newPost get route so user can add a newPost
-router.get('/newPost',  (req, res) => {
+router.get('/newPost',  withAuth, (req, res) => {
   res.render('new-post', {
     logged_in: req.session.logged_in,
   })
