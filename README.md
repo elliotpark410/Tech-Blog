@@ -9,91 +9,87 @@ The app follows the MVC paradigm in its architectural structure, using Handlebar
 <br>
 
 
+## GIF of Application
+
+<img src="Images\Tech Blog.gif" title="Tech Blog gif" width = 368px>
+
+<br>
+
+
 ## Links
 
-Deployed App on Heroku
-> [https://note-taker-elliotpark.herokuapp.com/](https://note-taker-elliotpark.herokuapp.com/)
+
+[Deployed App on Heroku](https://desolate-atoll-11549.herokuapp.com/)
+
 <br>
 
-Link to GIF of Application
-> [https://drive.google.com/file/d/1XiuC8I3lHTCWGRM8otS_M1hiaoDsPoU5/view](https://drive.google.com/file/d/1XiuC8I3lHTCWGRM8otS_M1hiaoDsPoU5/view)
+[GIF of Application](https://drive.google.com/file/d/1XiuC8I3lHTCWGRM8otS_M1hiaoDsPoU5/view)
+
 <br>
 
-
-Github Repository
-> [https://github.com/elliotpark410/Tech-Blog](https://github.com/elliotpark410/Tech-Blog)
+[Github Repository](https://github.com/elliotpark410/Tech-Blog)
 
 <br>
 
 
 ## Table of Contents
-  * [Getting-Started](#getting-started)
+  * [Getting Started](#getting-started)
   * [Installation](#installation)
-  * [Technologies-Used](#technologies-used)
-  * [Contribution-Guidelines](#contribution-guidelines)
-  * [Cloning-Guidelines](#cloning-guidelines)
+  * [Technologies Used](#technologies-used)
+  * [Contribution Guidelines](#contribution-guidelines)
+  * [Cloning Guidelines](#cloning-guidelines)
   * [Screenshots](#screenshots)
-  * [GIF-of-Application](#gif-of-application)
-  * [Code-Snippets](#code-snippets)
-  * [Learning-Points](#learning-points)
+  * [Code Snippets](#code-snippets)
+  * [Learning Points](#learning-points)
   * [Authors](#authors)
-  * [License-and-Acknowledgements](#license-and-acknowledgements)
+  * [License and Acknowledgements](#license-and-acknowledgements)
   * [Contact](#Contact)
 
 <br>
 
 
-## Getting-Started
+## Getting Started
 
 To begin the application, use the following in command line:
 
-```bash
+`
 node server.js
-```
+`
 <br>
 
 
 ## Installation
 
+To run this application, you will need Node and other dependencies: 
+
 1. You will need to install Node.js. Here is a link below:
 
->https://nodejs.org/en/download/
+[Download Node](https://nodejs.org/en/download/)
 
 <br>
 
 2. Once you have downloaded Node.js, you will want to download node package manager (npm). In command line, you can enter:
 
->npm install -g npm
+`npm install -g npm
+`
 
 <br>
 
-3. After installing npm, you have to initialize npm. In command line, you can enter:
+3. Next, install all the dependencies in the package.json. In command line, you can enter:
 
->npm init -y
+`npm install 
+`
 
-<br>
+4. Additionally, you can download mysql database to store and access data:
 
-4. Next, install Inquirer.js which is one of the many node packages. In command line, you can enter:
-
->npm install inquirer
-
-<br>
-
-5. Next, install console.table which is one of the many node packages. In command line, you can enter:
-
->npm install console.table
+[Download MySQL](https://www.mysql.com/downloads/)
 
 <br>
 
-6. Next, install mysql2 which is one of the many node packages. In command line, you can enter:
 
->npm install mysql2
+5. Lastly, you will need to download Insomnia for testing API routes:
 
-<br>
-
-7. Lastly, you will need to download mysql:
-
->https://www.mysql.com/downloads/
+[Download Insomnia](https://insomnia.rest/download)
 
 <br>
 
@@ -136,20 +132,26 @@ Example DELETE: The API request below will delete note with id = "1"
 <br> -->
 
 
-## Technologies-Used
+## Technologies Used
 
 * [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-* [Node.js](https://nodejs.org/en/)
-* [npm Inquirer](https://www.npmjs.com/package/inquirer)
-* [npm console.table](https://www.npmjs.com/package/console.table)
-* [npm mysql2](https://www.npmjs.com/package/mysql2)
+* [Node.js](https://nodejs.org/en/) 
+* [Express](https://www.npmjs.com/package/express) 
+* [Express Session](https://www.npmjs.com/package/express-session) 
+* [Express Handlebars](https://www.npmjs.com/package/express-handlebars) 
+* [MySQL2](https://www.npmjs.com/package/mysql2)
+* [Sequelize](https://www.npmjs.com/package/sequelize) 
+* [Connect Session Sequelize](https://www.npmjs.com/package/connect-session-sequelize) 
+* [dotEnv](https://www.npmjs.com/package/dotenv)
+* [bcrypt](https://www.npmjs.com/package/bcrypt) 
 * [MySQL](https://www.mysql.com/downloads/)
+* [Insomnia](https://insomnia.rest/download)
 
 
 <br>
 
 
-## Contribution-Guidelines
+## Contribution Guidelines
 To contribute, please follow these steps:
 
 1. Fork this repository.
@@ -163,14 +165,14 @@ Alternatively see the GitHub documentation on [creating a pull request](https://
 <br>
 
 
-## Cloning-Guidelines
+## Cloning Guidelines
 
 To install this code, please use [Github's guidlines to clone the repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
 <br>
 
 Github repository:
->https://github.com/elliotpark410/Employee-Tracker
+>https://github.com/elliotpark410/Tech-Blog
 
 <br>
 
@@ -178,88 +180,93 @@ Github repository:
 ## Screenshots 
 
 <br>
-Screenshot of Initial Prompt
-<img src="Images\Initial Prompt screenshot.png" title="Initial Prompt screenshot" width = 700px>
+Homepage
+<img src="Images\Homepage screenshot.png" title="Homepage screenshot" width = 700px>
 
 <br>
 <br>
-Screenshot of View Employees table
-<img src="Images\View Employees screenshot.png" title="View Employees table screenshot" width = 700px>
+Sign Up
+<img src="Images\Sign Up screenshot.png" title="Sign Up screenshot" width = 700px>
 
 <br>
 <br>
-Screenshot of Add Department prompt 
-<img src="Images\Add Department screenshot.png" title="Add Department prompt screenshot" width = 700px>
+Dashboard
+<img src="Images\Dashboard screenshot.png" title="Dashbooard screenshot" width = 700px>
 
 <br>
 <br>
-Screenshot of Add Role prompt
-<img src="Images\Add Role screenshot.png" title="Add Role prompt screenshot" width = 700px>
+Submit a Comment
+<img src="Images\Submit a Comment screenshot.png" title="Submit a Comment screenshot" width = 700px>
 
 <br>
 <br>
-Screenshot of Add Employee prompt
-<img src="Images\Add Employee screenshot.png" title="Add Employee prompt screenshot" width = 700px>
-
-<br>
-<br>
-Screenshot of Update Employee prompt
-<img src="Images\Update Employee screenshot.png" title="Update Employee prompt screenshot" width = 700px>
+Edit Post
+<img src="Images\Edit Post screenshot.png" title="Edit Post screenshot" width = 700px>
 
 <br>
 <br>
 
 
-## GIF-of-Application
+## Code Snippets
 
-<img src="Images\Employee-Tracker.gif" title="Employee Tracker gif" width = 448px>
+This code snippet shows how you can use Express routes, Sequelize ORM, and JavaScript to create a get route for the hompaage so users can have access to all blog post data
 
-<br>
+* router.get('filepath') to request data from a specified source e.g. blog data post
 
-Link to GIF of Application
-> [https://drive.google.com/file/d/1ivP0EtLiI3hlsF6KbffkX7InR82vLHnL/view](https://drive.google.com/file/d/1ivP0EtLiI3hlsF6KbffkX7InR82vLHnL/view)
-<br>
+* try/catch statement for error handling 
 
-<br>
+* async/await to for asynchronous promise-based behavior
 
-## Code-Snippets
+* Sequelize .findAll() method to read the whole table from the database
 
-This code snippet shows how you can use SQL and npm mysql2 to create a function to view the departments table
+* .map function to create a new array with a callback function for every array element. In this case, we wanted to use it to return a plain object
 
-* const sql uses Structured Query Language SELECT statement to display columns with an alias FROM the department table 
-
-* ".query" is a built-in method in npm mysql2 to execute a query in the mysql database
-
-* "console.table()" method displays tabular data as a table
-
+* res.render ('template.handlebars') to render a view with data 
 
 ```
-function viewDepartments() {
-  const sql =
-    "SELECT department.id AS id, department.name AS department FROM department;";
+router.get('/', async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Comment,
+          attributes: ['comment_content', 'user_id', 'post_id',],
+        },
+      ],
+    });
 
-  db.query(sql, (err, data) => {
-    if (err) {
-      console.log(err);
-    }
-    console.table(data);
-    initPrompt();
-  });
-}
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render('homepage', { 
+      posts, 
+    });
+  } catch (err) {
+   (Internal Server Error)
+    res.status(500).json(err);
+  }
+});
 ```
 
  <br>
 
 
-## Learning-Points
+## Learning Points
 
-* How to use npm mysql2 to generate MySQL queries
+* How to use Sequelize ORM
 
-* How to use promises and switch statements
+* How to create handlebar templates
 
-* How to use SQL statements (SELECT, INSERT, DELETE, UPDATE, JOIN) 
+* How to deploy on Heroku with MySQL
 
-* How to use MySQL Workbench as a MySQL graphical user interface
+* How to create API routes and models 
+
+* How to create sessions to capture cookies and user information
+
+* How to use MySQL Workbench and Insomnia for testing API routes
 
 
 <br>
@@ -268,15 +275,15 @@ function viewDepartments() {
 ## Authors
  **1. Elliot Park** 
 
-[https://github.com/elliotpark410](https://github.com/elliotpark410)
+[Github](https://github.com/elliotpark410)
 <br>
 
-[https://www.linkedin.com/in/elliot-park/](https://www.linkedin.com/in/elliot-park/)
+[LinkedIn](https://www.linkedin.com/in/elliot-park/)
 
 <br>
 
 
-## License-and-Acknowledgements
+## License and Acknowledgements
 
 This project is licensed under the MIT license via UC Berkeley's Extension Program
 
