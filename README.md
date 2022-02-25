@@ -16,12 +16,12 @@ Deployed App on Heroku
 <br>
 
 Link to GIF of Application
-> [https://drive.google.com/file/d/1ivP0EtLiI3hlsF6KbffkX7InR82vLHnL/view](https://drive.google.com/file/d/1ivP0EtLiI3hlsF6KbffkX7InR82vLHnL/view)
+> [https://drive.google.com/file/d/1XiuC8I3lHTCWGRM8otS_M1hiaoDsPoU5/view](https://drive.google.com/file/d/1XiuC8I3lHTCWGRM8otS_M1hiaoDsPoU5/view)
 <br>
 
 
 Github Repository
-> [https://github.com/elliotpark410/Employee-Tracker](https://github.com/elliotpark410/Employee-Tracker)
+> [https://github.com/elliotpark410/Tech-Blog](https://github.com/elliotpark410/Tech-Blog)
 
 <br>
 
