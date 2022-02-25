@@ -1,3 +1,4 @@
+// create form handler that includes a fetch request for a backend route
 async function deleteFormHandler(event) {
   event.preventDefault();
 

@@ -1,3 +1,4 @@
+// create form handler that includes a fetch request for a backend route
 const logout = async () => {
   const response = await fetch('/api/users/logout', {
     method: 'POST',

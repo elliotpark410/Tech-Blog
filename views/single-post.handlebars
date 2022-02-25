@@ -1,6 +1,7 @@
 <div class="card">
 
   <div class="card-header">
+    {{!-- render post information --}}
     <h4><a class="post-title" href="/post/{{id}}">{{title}}</a></h4>
       <p class="user-info">Posted by {{user.username}} on {{format_date date_created}}</p>
   </div>
@@ -15,6 +16,7 @@
 
         <label class="form-group font-weight-bold">Comments</label>
 
+          {{!-- render each comment --}}
           {{#each comments as |comment| }}
           <div class="card">
             <section class="comment card-body">
