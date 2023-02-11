@@ -40,33 +40,27 @@ node server.js
 
 ## Prerequisites
 
-To run this application, you will need Node and other dependencies:
+1. [Download Node.js](https://nodejs.org/en/download/)
 
-1. Download Node.js
-
-[Download Node](https://nodejs.org/en/download/)
 <br>
 
 2. Install node package manager (npm)
 
-`npm install -g npm
-`
+`npm install -g npm`
+
 <br>
 
-3. Install dependencies in package.json
+3. Install dependencies inquirer, console.table, and mysql2
 
-`npm install
-`
+`npm install`
 
-4. Download mysql database to store and access data:
-
-[Download MySQL](https://www.mysql.com/downloads/)
 <br>
 
+4. [Download mysql](https://www.mysql.com/downloads/)
 
-5. Download Insomnia for testing API routes:
+<br>
 
-[Download Insomnia](https://insomnia.rest/download)
+5. [Download Insomnia](https://insomnia.rest/download)
 
 <br>
 
