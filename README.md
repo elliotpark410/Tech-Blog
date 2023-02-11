@@ -19,18 +19,13 @@ The app follows the MVC paradigm in its architectural structure, using Handlebar
 ## Links
 
 
-[Deployed App on Heroku](https://desolate-atoll-11549.herokuapp.com/)
+[https://ep-tech-blog.herokuapp.com/](https://ep-tech-blog.herokuapp.com/)
 
 <br>
 
 [GIF of Application](https://drive.google.com/file/d/1XiuC8I3lHTCWGRM8otS_M1hiaoDsPoU5/view)
 
 <br>
-
-[Github Repository](https://github.com/elliotpark410/Tech-Blog)
-
-<br>
-
 
 ## Table of Contents
   * [Getting Started](#getting-started)
@@ -60,7 +55,7 @@ node server.js
 
 ## Installation
 
-To run this application, you will need Node and other dependencies: 
+To run this application, you will need Node and other dependencies:
 
 1. You will need to install Node.js. Here is a link below:
 
@@ -77,7 +72,7 @@ To run this application, you will need Node and other dependencies:
 
 3. Next, install all the dependencies in the package.json. In command line, you can enter:
 
-`npm install 
+`npm install
 `
 
 4. Additionally, you can download mysql database to store and access data:
@@ -110,7 +105,7 @@ To test the API, I recommend downloading [Insomnia's API Platform](https://insom
 
 >POST http://localhost:3000/api/notes
 
-Example POST body: 
+Example POST body:
 ```bash
 {
   "title":"Notes Title",
@@ -135,15 +130,15 @@ Example DELETE: The API request below will delete note with id = "1"
 ## Technologies Used
 
 * [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-* [Node.js](https://nodejs.org/en/) 
-* [Express](https://www.npmjs.com/package/express) 
-* [Express Session](https://www.npmjs.com/package/express-session) 
-* [Express Handlebars](https://www.npmjs.com/package/express-handlebars) 
+* [Node.js](https://nodejs.org/en/)
+* [Express](https://www.npmjs.com/package/express)
+* [Express Session](https://www.npmjs.com/package/express-session)
+* [Express Handlebars](https://www.npmjs.com/package/express-handlebars)
 * [MySQL2](https://www.npmjs.com/package/mysql2)
-* [Sequelize](https://www.npmjs.com/package/sequelize) 
-* [Connect Session Sequelize](https://www.npmjs.com/package/connect-session-sequelize) 
+* [Sequelize](https://www.npmjs.com/package/sequelize)
+* [Connect Session Sequelize](https://www.npmjs.com/package/connect-session-sequelize)
 * [dotEnv](https://www.npmjs.com/package/dotenv)
-* [bcrypt](https://www.npmjs.com/package/bcrypt) 
+* [bcrypt](https://www.npmjs.com/package/bcrypt)
 * [MySQL](https://www.mysql.com/downloads/)
 * [Insomnia](https://insomnia.rest/download)
 
@@ -177,7 +172,7 @@ Github repository:
 <br>
 
 
-## Screenshots 
+## Screenshots
 
 <br>
 Homepage
@@ -213,7 +208,7 @@ This code snippet shows how you can use Express routes, Sequelize ORM, and JavaS
 
 * router.get('filepath') to request data from a specified source e.g. blog data post
 
-* try/catch statement for error handling 
+* try/catch statement for error handling
 
 * async/await to for asynchronous promise-based behavior
 
@@ -221,7 +216,7 @@ This code snippet shows how you can use Express routes, Sequelize ORM, and JavaS
 
 * .map function to create a new array with a callback function for every array element. In this case, we wanted to use it to return a plain object
 
-* res.render ('template.handlebars') to render a view with data 
+* res.render ('template.handlebars') to render a view with data
 
 ```
 router.get('/', async (req, res) => {
@@ -241,8 +236,8 @@ router.get('/', async (req, res) => {
 
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render('homepage', { 
-      posts, 
+    res.render('homepage', {
+      posts,
     });
   } catch (err) {
    (Internal Server Error)
@@ -262,7 +257,7 @@ router.get('/', async (req, res) => {
 
 * How to deploy on Heroku with MySQL
 
-* How to create API routes and models 
+* How to create API routes and models
 
 * How to create sessions to capture cookies and user information
 
@@ -273,7 +268,7 @@ router.get('/', async (req, res) => {
 
 
 ## Authors
- **1. Elliot Park** 
+ **1. Elliot Park**
 
 [Github](https://github.com/elliotpark410)
 <br>
@@ -306,14 +301,14 @@ Copyright (c) 2022 Elliot Park
 
 
 
- 
-  
-
- 
 
 
 
- 
+
+
+
+
+
 
 
 
