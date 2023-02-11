@@ -22,7 +22,7 @@ The app follows the MVC paradigm in its architectural structure, using Handlebar
   * [Screenshots](#screenshots)
   * [Code Snippets](#code-snippets)
   * [Learning Points](#learning-points)
-  * [Authors](#authors)
+  * [Author](#author)
 
 <br>
 
@@ -178,7 +178,7 @@ router.get('/', async (req, res) => {
 <br>
 
 
-## Authors
+## Author
  **1. Elliot Park**
 
 [Github](https://github.com/elliotpark410)
