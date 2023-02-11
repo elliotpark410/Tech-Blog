@@ -17,7 +17,7 @@ The app follows the MVC paradigm in its architectural structure, using Handlebar
 
 ## Table of Contents
   * [Getting Started](#getting-started)
-  * [Installation](#installation)
+  * [Prerequisites](#prerequisites)
   * [Technologies Used](#technologies-used)
   * [Screenshots](#screenshots)
   * [Code Snippets](#code-snippets)
@@ -37,21 +37,20 @@ node server.js
 <br>
 
 
-## Installation
+
+## Prerequisites
 
 To run this application, you will need Node and other dependencies:
 
 1. Download Node.js
 
 [Download Node](https://nodejs.org/en/download/)
-
 <br>
 
 2. Install node package manager (npm)
 
 `npm install -g npm
 `
-
 <br>
 
 3. Install dependencies in package.json
@@ -62,7 +61,6 @@ To run this application, you will need Node and other dependencies:
 4. Download mysql database to store and access data:
 
 [Download MySQL](https://www.mysql.com/downloads/)
-
 <br>
 
 
