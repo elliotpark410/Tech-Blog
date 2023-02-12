@@ -179,7 +179,7 @@ router.get('/', async (req, res) => {
 
 
 ## Author
- **1. Elliot Park**
+ **Elliot Park**
 
 [Github](https://github.com/elliotpark410)
 
